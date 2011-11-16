@@ -4,7 +4,7 @@
 
 , changelog         : 'Change Log'
 , _OR               : 'OR'
-, description       : 'ReadableStream from array (or hash variable)',
+, description       : 'ReadableStream from array (or hash variable)'
 , install           : 'Installation'
 , overview          : 'Overview'
 , usage             : 'Usage'
