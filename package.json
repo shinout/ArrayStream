@@ -1,18 +1,18 @@
 {
-  "name": "arrayemitter"
+  "name": "arraystream"
 , "version": "0.0.1"
-, "description": "EventEmitter emittin array-iteration events."
-, "tags": ["EventEmitter", "array", "object", "iteration", "event"]
+, "description": "ReadableStream of arrays and hash variables."
+, "keywords": ["ReadableStream", "array", "object", "stream"]
 , "author": "SHIN Suzuki <shinout310@gmail.com>"
 , "repository": 
   { "type": "git"
-  ,  "url": "https://github.com/shinout/ArrayEmitter.git"
+  ,  "url": "https://github.com/shinout/ArrayStream.git"
   }
-, "bugs": {"web": "https://github.com/shinout/ArrayEmitter/issues" }
+, "bugs": {"url": "https://github.com/shinout/ArrayStream/issues" }
 , "licences": 
   [ { "type": "MIT"
-    , "url": "https://github.com/shinout/ArrayEmitter/raw/master/LICENCE"
+    , "url": "https://github.com/shinout/ArrayStream/raw/master/LICENCE"
     }
   ]
-, "main": "./ArrayEmitter.js"
+, "main": "./ArrayStream.js"
 }

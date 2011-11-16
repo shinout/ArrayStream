@@ -32,7 +32,7 @@ SyntaxError: Unexpected token ,
     at Module.load (module.js:351:31)
     at Function._load (module.js:310:12)
     at Array.0 (module.js:470:10)
-'description' is not defined.  in /home/shinout/node_modules/arraystream/scripts/../scripts/README.tpl.md at line 3.
+'description' is not defined.  in /home/shinout/node_modules/arraystream/scripts/.././scripts/README.tpl.md at line 3.
 //------------------------------------//
 //-------------- start ---------------//
  1	ArrayStream.js ${version}
@@ -62,4 +62,4 @@ ReferenceError: description is not defined
     at Module._compile (module.js:432:26)
     at Object..js (module.js:450:10)
     at Module.load (module.js:351:31)
-'description' is not defined.  in /home/shinout/node_modules/arraystream/scripts/../scripts/README.tpl.md at line 3.
+'description' is not defined.  in /home/shinout/node_modules/arraystream/scripts/.././scripts/README.tpl.md at line 3.
