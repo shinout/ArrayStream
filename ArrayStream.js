@@ -78,9 +78,23 @@ ArrayStream.prototype.destroySoon = function() { // implementing ReadableStream
 /**
  * @see ReadableStream
  **/
-ArrayStream.prototype.pipe = function() {
-  return process.stdin.pipe.apply(this, arguments);
-}
+ArrayStream.prototype.pipe = function(wstream, options) {
+  options || (options = {});
+
+  wstream.emit("pipe", this);
+
+  this.on("data", function(d) {
+    var bool = wstream.write(d);
+  });
+
+  if (options.end !== false) {
+    this.on("end", function() {
+      wstream.end();
+    });
+  }
+
+  return wstream;
+};
 
 
 /**
@@ -115,6 +129,6 @@ function emit() {
 }
 
 
-ArrayStream.version = '0.0.1';
+ArrayStream.version = '0.0.2';
 
 module.exports = ArrayStream;
