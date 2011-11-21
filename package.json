@@ -1,6 +1,6 @@
 {
   "name": "arraystream"
-, "version": "0.0.2"
+, "version": "0.0.3"
 , "description": "ReadableStream of arrays and hash variables."
 , "keywords": ["ReadableStream", "array", "object", "stream"]
 , "author": "SHIN Suzuki <shinout310@gmail.com>"

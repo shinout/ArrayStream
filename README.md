@@ -1,4 +1,4 @@
-ArrayStream.js 0.0.2
+ArrayStream.js 0.0.3
 ==========
 [Node.js] ReadableStream from array (or hash variable)
 

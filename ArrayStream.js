@@ -104,14 +104,13 @@ function emit() {
   var self = this;
   (function execute() {
     try {
-      var k = self.keys[self.i];
-      self.emit('data', self.arr[k], k); 
-      self.i++;
-
       if(self.i >= self.length) {
         self.emit('end');
       }
       else {
+        var k = self.keys[self.i];
+        self.emit('data', self.arr[k], k); 
+        self.i++;
         if (!self.paused) nextTick(execute);
       }
     } catch (e) {
@@ -129,6 +128,6 @@ function emit() {
 }
 
 
-ArrayStream.version = '0.0.2';
+ArrayStream.version = '0.0.3';
 
 module.exports = ArrayStream;
