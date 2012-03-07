@@ -43,6 +43,19 @@ ArrayStream.create = function(arr, op) {
   return new this(arr, op);
 };
 
+ArrayStream.forEach = function(arr, op, fn) {
+  var args = Array.prototype.slice.call(arguments);
+  var arg = args.shift();
+  var fn  = args.pop();
+
+  var stream = ArrayStream.create(arg, args.length? args[0]: null);
+
+  stream.on("data", function(value, key) {
+    fn(value, key);
+  });
+  return stream;
+};
+
 /**
  * extends Stream
  **/

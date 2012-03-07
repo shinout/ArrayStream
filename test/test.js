@@ -1,5 +1,6 @@
 var ArrayStream = require('../ArrayStream');
 if (typeof global != 'undefined') require('./load.test').load(global);
+require("termcolor").define;
 
 var TOTAL = 1000;
 

@@ -1,5 +1,4 @@
 var node = (typeof exports == 'object' && exports === this);
-if (node) { require('./termcolor').define() }
 
 var assert = (node) ? require('assert') : {};
 var T = { count : 0, success : 0 };
