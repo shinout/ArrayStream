@@ -1,12 +1,11 @@
 /**
  * ArrayStream -- ReadableStream of arrays or hash variables
  * @author SHIN Suzuki
- * @version 0.0.1
  *
  */
 
-var EventEmitter = require('events').EventEmitter,
-    nextTick     = process.nextTick;
+var Stream = require('stream').Stream;
+    nextTick = process.nextTick;
 
 /**
  * @constructor
@@ -40,8 +39,14 @@ function ArrayStream(arr, op) {
   if (!this.paused) nextTick(emit.bind(this));
 }
 
+ArrayStream.create = function(arr, op) {
+  return new this(arr, op);
+};
 
-ArrayStream.prototype = new EventEmitter();
+/**
+ * extends Stream
+ **/
+require('util').inherits(ArrayStream, Stream);
 
 /**
  * @see ReadableStream
@@ -74,28 +79,6 @@ ArrayStream.prototype.destroySoon = function() { // implementing ReadableStream
   // Not knowing what to do, this remains unimplemented...
   this.destroy();
 }
-
-/**
- * @see ReadableStream
- **/
-ArrayStream.prototype.pipe = function(wstream, options) {
-  options || (options = {});
-
-  wstream.emit("pipe", this);
-
-  this.on("data", function(d) {
-    var bool = wstream.write(d);
-  });
-
-  if (options.end !== false) {
-    this.on("end", function() {
-      wstream.end();
-    });
-  }
-
-  return wstream;
-};
-
 
 /**
  * private function

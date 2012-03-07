@@ -12,7 +12,7 @@ for (var i=0; i<TOTAL; i++) {
 }
 
 //var arem = new ArrayStream(arr);
-var arem = new ArrayStream(arr, {name: 'arr'});
+var arem = ArrayStream.create(arr, {name: 'arr'});
 var count = 0;
 
 arem.on('data', function(value, key) {
@@ -38,7 +38,7 @@ for (var i=0; i<TOTAL; i++) {
 }
 
 //var objem = new ArrayStream(obj);
-var objem = new ArrayStream(obj, {name: 'obj'});
+var objem = ArrayStream.create(obj, {name: 'obj'});
 objem.on('data', function(value, key) {
   T.equal(Math.round(key, 8), Math.round(Math.sin(value), 8), 'key');
   T.equal(count3, value, 'value');
@@ -54,7 +54,7 @@ objem.on('end', function() {
  */
 
 //var eobjem = new ArrayStream(obj);
-var eobjem = new ArrayStream(obj, {name: 'objerr'});
+var eobjem = ArrayStream.create(obj, {name: 'objerr'});
 var ecount = 0;
 
 eobjem.on('data', function(v, k) {
@@ -77,7 +77,7 @@ eobjem.on('end', function() {
  */
 
 //var eobjem2 = new ArrayStream(obj, { tolerant: true});
-var eobjem2 = new ArrayStream(obj, { tolerant: true, name: 'objerr2'});
+var eobjem2 = ArrayStream.create(obj, { tolerant: true, name: 'objerr2'});
 var ecount2 = 0;
 
 eobjem2.on('data', function(v, k) {
@@ -97,7 +97,7 @@ eobjem2.on('end', function() {
 
 
 /* resume test */
-var ae = new ArrayStream(arr, {pause: true});
+var ae = ArrayStream.create(arr, {pause: true});
 var c = c2 = 0;
 
 ae.on('data', function(value, key) {
@@ -117,7 +117,7 @@ ae.resume();
 /**
  * resume test 2 (resuming after emitting starts)
  **/
-var as = new ArrayStream(arr);
+var as = ArrayStream.create(arr);
 
 as.on('data', function(value, key) {
   T.equal(c2, key, 'key number');

@@ -19,7 +19,7 @@ Overview
 ### Usage ###
 #### with Array ####
     var ArrayStream = require('arraystream');
-    var stream = new ArrayStream(['hoge', 'fuga', 'piyo']);
+    var stream = ArrayStream.create(['hoge', 'fuga', 'piyo']);
 
     stream.on('data', function(value, key) {
       console.log(value); // hoge, fuga, piyo
