@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/shinout/ArrayStream.png)](http://travis-ci.org/shinout/ArrayStream)
 ArrayStream.js 0.0.5
 ==========
 [Node.js] ReadableStream from array (or hash variable)
